@@ -14,6 +14,7 @@ $elm\
 $golang\
 $gradle\
 $haskell\
+$python\
 $java\
 $julia\
 $nodejs\
@@ -97,6 +98,17 @@ format = '[ $symbol $branch ]($style)'
 [git_status]
 style = "bg:#FCA17D"
 format = '[$all_status$ahead_behind ]($style)'
+conflicted = "="
+ahead =	"⇡${count} "
+behind = "⇣${count} "
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+untracked = "?${count} "
+stashed = "$${count} "
+modified = "!${count} "
+staged = "+${count} "
+renamed = "»${count} "
+deleted = "✘${count} "
+disabled = false
 
 [golang]
 symbol = " "
@@ -111,6 +123,11 @@ format = '[ $symbol ($version) ]($style)'
 symbol = " "
 style = "bg:#86BBD8"
 format = '[ $symbol ($version) ]($style)'
+
+[python]
+symbol = '🐍'
+format = '[${symbol} ${pyenv_prefix} (${version} )(\($virtualenv\))]($style)'
+style = 'bg:#2ECC71 fg:#2C3E50'
 
 [java]
 symbol = " "
